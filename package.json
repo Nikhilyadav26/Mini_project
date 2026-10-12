@@ -1,0 +1,13 @@
+{
+  "name": "campus-connect",
+  "version": "1.0.0",
+  "description": "Campus Connect Workspace with Full-Stack Frontend & Backend",
+  "scripts": {
+    "start": "npm --prefix campus-connect-backend start",
+    "backend": "npm --prefix campus-connect-backend run dev",
+    "frontend": "npm --prefix campus-connect-frontend run dev",
+    "build:frontend": "npm --prefix campus-connect-frontend run build",
+    "seed": "npm --prefix campus-connect-backend run seed",
+    "test": "node campus-connect-backend/tests/acceptance.test.js"
+  }
+}

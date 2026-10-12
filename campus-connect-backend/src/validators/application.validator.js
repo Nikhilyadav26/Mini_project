@@ -1,0 +1,17 @@
+const { z } = require("zod");
+
+const createApplicationSchema = z.object({
+  opportunityId: z.string().trim().min(1, "opportunityId is required"),
+  status: z.enum(["saved", "applied"]).optional().default("saved")
+});
+
+const updateApplicationStatusSchema = z.object({
+  status: z.enum(["shortlisted", "rejected", "selected"], {
+    errorMap: () => ({ message: "Teacher can only set status to shortlisted, rejected, or selected" })
+  })
+});
+
+module.exports = {
+  createApplicationSchema,
+  updateApplicationStatusSchema
+};
